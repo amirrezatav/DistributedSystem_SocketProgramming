@@ -5,6 +5,8 @@
         Unknown,
         Query,
         QueryResult,
-        NewData
+        NewData,
+        Import,
+        Command
     }
 }

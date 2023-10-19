@@ -2,7 +2,6 @@
 {
     public interface IPacketProcessor
     {
-        public Task ConnectionFailed(Exception error);
-        public Task Process(byte[] _buffer, int Validcount, Transfer transfer);
+        public void Process(byte[] _buffer, int Validcount, object transfer);
     }
 }

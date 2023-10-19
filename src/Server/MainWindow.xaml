@@ -19,28 +19,16 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Margin="5" x:Name="IP" materialDesign:HintAssist.Hint="IP Address" Foreground="{DynamicResource MaterialDesignDarkForeground}"/>
-            <TextBox Grid.Column="1" Margin="5" x:Name="Port" materialDesign:HintAssist.Hint="Port Number" Foreground="{DynamicResource MaterialDesignDarkForeground}"/>
+            <ComboBox Margin="5" x:Name="IP" materialDesign:HintAssist.Hint="IP Address" Foreground="{DynamicResource MaterialDesignDarkForeground}">
+            </ComboBox>
+            <TextBox Grid.Column="1" Margin="5" Text="1080" x:Name="Port" materialDesign:HintAssist.Hint="Port Number" Foreground="{DynamicResource MaterialDesignDarkForeground}"/>
             <StackPanel HorizontalAlignment="Center" Grid.Column="2" Orientation="Horizontal">
-                <Button x:Name="BtnAction" Margin="5">Start Server</Button>
+                <Button Click="BtnAction_Click" x:Name="BtnAction" Margin="5" Background="Green">Start Server</Button>
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1">
-            <TreeView>
-                <TreeViewItem>
-                    <TreeViewItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Viewbox Width="16" Height="16">
-                                <materialDesign:PackIcon Kind="Laptop" Width="25" Height="25" />
-                            </Viewbox>
-                            <StackPanel x:Name="ClientInfo" Orientation="Horizontal">
-                                <TextBlock Margin="8,0,0,0" Text="ID" />
-                                <TextBlock Margin="8,0,0,0" Text="IP" />
-                                <TextBlock Margin="8,0,0,0" Text="Port" />
-                            </StackPanel>
-                        </StackPanel>
-                    </TreeViewItem.Header>
-                </TreeViewItem>
+            <TreeView x:Name="treeviewer">
+              
             </TreeView>
         </ScrollViewer>
         <TextBox x:Name="Log" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="0">
